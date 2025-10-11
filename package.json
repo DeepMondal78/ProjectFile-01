@@ -1,0 +1,20 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "locomotive-scroll": "^4.1.4",
+    "sass": "^1.89.2"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

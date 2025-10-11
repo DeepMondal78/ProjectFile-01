@@ -1,0 +1,144 @@
+.partnerLove {
+    width: 100%;
+    min-height: 100vh;
+    padding: 4rem 4rem;
+   
+
+    .partnerText {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4rem;
+
+        @font-face {
+            font-family: 'dxrestcal-medium';
+            src: url('../font/dxrestcal-medium.otf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        h1 {
+            font-size: 15vw;
+            font-family: 'dxrestcal-medium';
+            color: $text-color;
+            line-height: 77%;
+            margin: 0;
+            width: 100%;
+            color: rgba(182, 182, 182, 0.2);
+            background: linear-gradient(to right, #ffff, #e9e7e7) no-repeat;
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-size: 0%;
+            transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            position: relative;
+
+        }
+
+        p {
+            font-family: $btn-font;
+            font-size: 2rem;
+            color: $text-color;
+            text-align: start;
+        }
+    }
+
+    .reviewCard {
+        width: 100%;
+        padding: 2rem 0;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        cursor: grab;
+        user-select: none;
+
+        .rv-card {
+            min-width: 25vw;
+            height: 65vh;
+            border: 2px solid $text-color;
+            border-radius: 1.5rem;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+
+            img {
+                width: 6vw;
+                height: 6vw;
+                object-fit: cover;
+                border-radius: 50%;
+                border: 2px solid $text-color;
+            }
+
+            h3 {
+                font-family: "Inter", sans-serif;
+                font-size: 1.8rem;
+                font-weight: 600;
+                color: $text-color;
+            }
+
+            p {
+                font-family: $btn-font;
+                font-size: 1.6rem;
+                color: $text-color;
+                opacity: 0.7;
+            }
+
+            button {
+                margin-top: 1.5rem;
+                background-color: #e53935;
+                color: $text-color;
+                border: none;
+                padding: 0.8rem 2rem;
+                border-radius: 2rem;
+                font-size: 1rem;
+                font-weight: 500;
+                cursor: pointer;
+                transition: background 0.3s ease;
+
+                &:hover {
+                    background-color: $text-color;
+                    color: #000;
+                    transition: all 0.3s ease;
+                }
+            }
+
+            &:hover {
+                background-color: #18181B;
+                transition: border 0.2s ease-in-out;
+                border: transparent;
+            }
+        }
+    }
+
+
+}
+
+@media (max-width: 1024px) {
+    .partnerLove {
+        .reviewCard {
+            .rv-card {
+                min-width: 35vw;
+                height: 55vh;
+            }
+        }
+    }
+}

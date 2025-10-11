@@ -1,0 +1,147 @@
+.resentWorkSection {
+  width: 100%;
+  min-height: 60vh;
+  padding: 0 4rem;
+  cursor: context-menu;
+
+  .resentText {
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @font-face {
+      font-family: 'dxrestcal-medium';
+      src: url('../font/dxrestcal-medium.otf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    h1 {
+      font-size: 15vw;
+      font-family: 'dxrestcal-medium';
+      line-height: 77%;
+      margin: 0;
+      width: 100%;
+      background: linear-gradient(to right, #ffffff, #e9e7e7) no-repeat;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 0%;
+      background-position: left;
+      background-repeat: no-repeat;
+      transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      position: relative;
+    }
+
+    p {
+      font-size: 20rem;
+      color: $text-color;
+    }
+  }
+
+  .resentContent {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    p {
+      font-size: 2rem;
+      color: $text-color;
+      text-align: start;
+      font-family: $btn-font;
+    }
+
+    #ViewworkBtn {
+      width: 8rem;
+      padding: 0.7rem;
+      margin-top: 4rem;
+      border: 2px solid $text-color;
+      background-color: transparent;
+      font-size: 1rem;
+      font-family: $btn-font;
+      color: $text-color;
+      border-radius: 4rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $text-color;
+        color: $primary-color;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+
+}
+
+
+//  // 🔽 Tablet: max-width 991px
+//   @media (max-width: 991px) {
+   
+
+//     .resentText {
+//       h1 {
+//         font-size: 18vw;
+//         text-align: left;
+//       }
+
+//       p {
+//         font-size: 10rem;
+//       }
+//     }
+
+//     .resentContent {
+//       flex-direction: column;
+//       align-items: flex-start;
+
+//       p {
+//         font-size: 1.5rem;
+//       }
+
+//       #ViewworkBtn {
+//         margin-top: 2rem;
+//         width: 100%;
+//         max-width: 12rem;
+//       }
+//     }
+//   }
+
+//   // 🔽 Mobile: max-width 668px
+//   @media (max-width: 668px) {
+   
+//     .resentText {
+//       h1 {
+//         font-size: 22vw;
+//         line-height: 80%;
+//         text-align: left;
+//       }
+
+//       p {
+//         font-size: 6rem;
+//       }
+//     }
+
+//     .resentContent {
+//       flex-direction: column;
+//       align-items: flex-start;
+
+//       p {
+//         font-size: 1.2rem;
+//       }
+
+//       #ViewworkBtn {
+//         margin-top: 2rem;
+//         width: 100%;
+//         max-width: 10rem;
+//         font-size: 0.9rem;
+//       }
+//     }
+//   }

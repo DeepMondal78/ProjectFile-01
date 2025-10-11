@@ -1,0 +1,180 @@
+footer {
+    width: 100vw;
+    // min-height: 60vh;
+    padding: 0 4rem;
+    // margin-top: 10rem;
+
+    .footerSection {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: $text-color;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .star {
+            font-size: 20rem;
+            color: $text-color;
+            transform: translateX(-20%);
+        }
+
+        .textRotateCircle {
+            position: relative;
+            width: 7vw;
+            height: 7vw;
+            border: 1.5px solid $text-color;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            // Rotating Text Circle
+            .circleTextSVG {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                padding: 0.2rem;
+                transform: rotate(0deg);
+                animation: rotateText 4s linear infinite;
+
+                text {
+                    font-family: $btn-font;
+                    font-size: 1.5rem;
+                    fill: $text-color;
+                    letter-spacing: 1px;
+                }
+            }
+
+            // Inner Cat Icon Circle
+            .innerCircle {
+                width: 4.5vw;
+                height: 4.5vw;
+                border: 1.5px solid $text-color;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .circleLogo img {
+                    width: 2.5vw;
+                    height: auto;
+                }
+            }
+        }
+
+        // Animation for spinning
+        @keyframes rotateText {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        h1 {
+            font-family: $slider-font;
+            font-size: 6vw;
+            letter-spacing: 0.5rem;
+
+            span img {
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                background-size: cover;
+            }
+        }
+
+        .ctaBtn {
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            border: 2px solid $text-color;
+            border-radius: 3rem;
+            background: transparent;
+            color: $text-color;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+
+            a {
+                text-decoration: none;
+                font-family: $btn-font;
+                font-size: 1rem;
+                color: $text-color;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: $text-color;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.4s ease;
+                z-index: -1;
+                color: $text-color;
+
+            }
+
+            &:hover::before {
+                transform: scaleX(1);
+                color: #000;
+            }
+        }
+
+    }
+
+    .footerLast {
+        margin-top: 4rem;
+        border-top: 2px solid rgba(255, 255, 255, 0.1);
+        padding-top: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            padding: 0;
+
+            li a {
+                color: rgba(255, 255, 255, 0.8);
+                text-decoration: none;
+                opacity: 50%;
+                font-size: 1.5rem;
+                transition: all 0.3s;
+
+                &:hover {
+                    opacity: 100%;
+                    color: $text-color;
+
+                }
+            }
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: $text-color;
+            opacity: 70%;
+            margin-top: 1rem;
+        }
+
+    }
+}
+
+
+// @media (max-width: 1024px) {
+//     footer {
+//         padding: 0 2rem;
+//     }
+// }

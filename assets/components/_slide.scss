@@ -1,0 +1,97 @@
+.slideAnimate {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    // overflow-x: hidden;
+    padding: 2rem 0;
+
+    .slideRow {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+
+        .slideTrack {
+            display: flex;
+            width: fit-content;
+            animation: scrollLeft 20s linear infinite;
+            gap: 2rem;
+        }
+
+        &.slideRow2 .slideTrack {
+            animation: scrollRight 20s linear infinite;
+        }
+
+        .figma {
+            flex: 0 0 auto;
+            width: 35vw;
+            height: 12vw;
+            border: 2px solid $text-color;
+            border-radius: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: $slider-font;
+            color: $text-color;
+            font-size: 4vw;
+            cursor: pointer;
+        }
+    }
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollRight {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+
+
+
+// @media (max-width: 1024px) {
+//     .slideAnimate {
+//         height: 60vh;
+//     }
+// }
+
+// @media (max-width: 768px) {
+//     .figma {
+//         width: 25rem;
+//         height: 8rem;
+//         font-size: 2.5rem;
+//     }
+// }
+
+// @media (max-width: 668px) {
+//     .slideAnimate {
+//         width: 100%;
+//         height: 40vh;
+//         display: flex;
+//         flex-direction: column;
+//         // gap: 0.5rem;
+//         padding: 2rem 0;
+
+//         .slideRow {
+//             .figma {
+//                 width: 20rem;
+//                 height: 5rem;
+//                 font-size: 2.5rem;
+//             }
+//         }
+//     }
+// }

@@ -1,0 +1,223 @@
+.wrokCardSection {
+    width: 100vw;
+    height: 100%;
+    padding: 0 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    overflow: hidden;
+    overflow-x: hidden;
+    .firstCard,
+    .secondCard {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+
+        .card {
+            width: 100%;
+            max-width: 40vw;
+            height: 45vh;
+            padding: 4rem;
+            border-radius: 2rem;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            position: relative;
+            background-color: #17181B;
+            opacity: 0;
+            transform: translateX(0);
+            transition: all 0.2s ease;
+
+            @font-face {
+                font-family: 'DxGrafik-SemiBold';
+                src: url('../font/DxGrafik-SemiBold.otf') format('truetype');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            .title-wrapper {
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                line-height: 1;
+                position: relative;
+
+                h1,
+                h2 {
+                    font-family: 'DxGrafik-SemiBold';
+                    font-size: 7rem;
+                    color: $text-color;
+
+                    span {
+                        top: 0;
+                        font-size: 4rem;
+                    }
+
+                    .char {
+                        display: inline-block;
+                    }
+                }
+            }
+
+            #title-aa,
+            #title-bb,
+            #title-cc,
+            #title-dd {
+                transform: translateY(100%);
+                position: absolute;
+                display: inline-block;
+            }
+
+
+
+
+            h4 {
+                font-family: 'DxGrafik-SemiBold';
+                font-size: 2rem;
+                color: $text-color;
+                text-align: right;
+                align-self: flex-end;
+            }
+        }
+
+    }
+
+    .secondCard {
+        margin-top: 20rem;
+    }
+}
+
+Initial hidden style .card {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+// Animations
+@keyframes slide-left {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-right {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+.slide-left {
+    animation: slide-left 1.5s ease forwards;
+}
+
+.slide-right {
+    animation: slide-right 1.5s ease forwards;
+}
+
+
+#card1:hover {
+    background-color: rgb(220, 50, 20);
+    transition: all 0.5s ease;
+}
+
+#card2:hover {
+    background-color: rgb(206, 240, 220);
+    transition: all 0.5s ease;
+
+    h2,
+    h4 {
+        color: #000;
+    }
+}
+
+#card3:hover {
+    background-color: rgb(200, 209, 209);
+    transition: all 0.5s ease;
+
+    h2,
+    h4 {
+        color: #000;
+    }
+}
+
+#card4:hover {
+    background-color: rgb(243, 243, 102);
+    transition: all 0.5s ease;
+
+    h2,
+    h4 {
+        color: #000;
+    }
+}
+
+
+
+
+
+
+
+// @media (max-width: 1024px) {
+//     .wrokCardSection {
+//         // flex-direction: column;
+//         padding: 0 2rem;
+
+//         .card {
+//             max-width: 25rem;
+//             height: 12rem;
+//         }
+//     }
+// }
+
+// @media (max-width: 768px) {
+//     .wrokCardSection {
+//         padding: 0 1.5rem;
+
+//         .card {
+//             max-width: 100%;
+//             height: 20rem;
+
+//             h1 {
+//                 font-size: 5rem;
+//             }
+
+//             h4 {
+//                 font-size: 1.6rem;
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 668px) {
+//     .wrokCardSection {
+        
+//         .card {
+//             height: auto;
+//             padding: 1.5rem;
+
+//             h1 {
+//                 font-size: 4rem;
+//             }
+
+//             h4 {
+//                 font-size: 1.4rem;
+//                 text-align: right;
+//             }
+//         }
+//     }
+// }

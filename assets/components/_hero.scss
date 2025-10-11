@@ -1,0 +1,231 @@
+#fluid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.heroSection {
+  width: 100%;
+  // min-height: 100vh;
+  padding: 6rem 4rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  .textHi {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    @font-face {
+      font-family: 'DxAlegant';
+      src: url('../font/DxAlegant-ExtraLight_Free_personal_use.otf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    h1 {
+      font-size: 8vw;
+      color: $text-color;
+      font-family: 'DxAlegant';
+      cursor: context-menu;
+    }
+
+    img {
+      width: 30vw; 
+      min-width: 40px;
+    }
+  }
+
+ 
+  .heroContent {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    .hero-titel {
+      position: relative;
+      text-align: center;
+
+      .hover-animate {
+        position: relative;
+        z-index: 1;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: -3.5rem;
+          left: 5rem;
+          width: 35rem;
+          height: 35rem;
+          border-radius: 50%;
+          background-color: #8AAFB2;
+          filter: blur(10rem);
+          opacity: 0;
+          transition: all 0.4s ease;
+          z-index: -1;
+        }
+
+        &:hover::before {
+          opacity: 0.7;
+        }
+      }
+
+      h1 {
+        font-size: clamp(3rem, 8vw, 10rem);
+        color: $text-color;
+        font-family: 'DxAlegant';
+        cursor: context-menu;
+
+        span {
+          display: inline-block;
+          transition: transform 0.4s ease;
+        }
+
+        span.animate {
+          animation: wave 0.6s ease;
+        }
+      }
+
+      @keyframes wave {
+        0% {
+          transform: translateY(0) scale(1);
+        }
+
+        25% {
+          transform: translateY(-8px) scale(1.05);
+          color: #fff;
+        }
+
+        50% {
+          transform: translateY(8px) scale(1.1);
+          color: #74b0b4;
+        }
+
+        75% {
+          transform: translateY(-4px) scale(1);
+          color: #8AAFB2;
+        }
+
+        100% {
+          transform: translateY(0) scale(1);
+          color: #fff;
+        }
+      }
+
+      @font-face {
+        font-family: 'Abhaya Libre';
+        src: url('../font/AbhayaLibre-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      p {
+        color: $text-color;
+        font-size: clamp(1.2rem, 2.5vw, 3rem);
+        font-family: 'Abhaya Libre';
+        cursor: context-menu;
+      }
+
+      .hover-animate::before {
+        width: clamp(15rem, 30vw, 35rem);
+        height: clamp(15rem, 30vw, 35rem);
+        top: -3rem;
+        left: 4rem;
+        filter: blur(10rem);
+      }
+    }
+
+    .hero-image,
+    img {
+      width: clamp(140px, 25vw, 300px);
+      height: clamp(160px, 30vw, 340px);
+      object-fit: cover;
+      border-radius: 4vw;
+    }
+  }
+}
+
+
+
+
+// // ✅ Responsive tweaks (for tablet and mobile)
+// @media (max-width: 1024px) {
+
+// }
+
+// @media (max-width: 768px) {
+//   .heroSection {
+//     padding: 6rem 2rem;
+//     gap: 2rem;
+
+//     .textHi {
+//       h1 {
+//         font-size: 5rem;
+//       }
+//     }
+
+//     .heroContent {
+//       flex-direction: column;
+//       align-items: center;
+//       text-align: center;
+
+//       .hero-titel {
+//         h1 {
+//           font-size: clamp(3.5rem, 10vw, 6rem);
+//         }
+
+//         p {
+//           font-size: clamp(1.2rem, 2.5vw, 2rem);
+//         }
+
+//         .hover-animate::before {
+//           width: 20rem;
+//           height: 20rem;
+//           top: -2rem;
+//           left: 2rem;
+//           filter: blur(6rem);
+//         }
+//       }
+
+//       .hero-image,
+//       img {
+//         width: clamp(120px, 40vw, 260px);
+//         height: clamp(140px, 50vw, 300px);
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 668px) {
+//   .heroSection {
+//     padding: 6rem 1rem;
+
+//     .heroContent {
+//       .hero-image {
+//         width: 100%;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         img {
+//           width: 60vw;
+//           height: 65vw;
+//           margin-right: 4vw;
+//         }
+//       }
+//     }
+//   }
+// }

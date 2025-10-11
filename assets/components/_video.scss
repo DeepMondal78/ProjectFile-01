@@ -1,0 +1,139 @@
+.video {
+  width: 100%;
+  height: 100vh;
+  padding: 6rem 4rem;
+
+  .videoText {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+      font-family: $videoSection-font;
+      font-size: 2.5vw;
+      color: $text-color;
+      cursor: context-menu;
+    }
+
+    .downArrow {
+      width: 2.2rem;
+      height: 2.2rem;
+      border: 1px solid $text-color;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: $text-color;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        transform: translateY(5px);
+      }
+    }
+  }
+
+  .video-content {
+    width: 100%;
+    margin-top: 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .play-video {
+      width: 15vw;
+      height: 15vh;
+      border-radius: 3vw;
+      overflow: hidden;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hoverCircle {
+        position: absolute;
+        width: 5rem;
+        height: 5rem;
+        line-height: 5rem;
+        text-align: center;
+        background-color: #b5e5e9;
+        border-radius: 50%;
+        color: black;
+        font-weight: bold;
+        font-family: $slider-font;
+        opacity: 0;
+        transform: scale(0.5);
+        transition: all 0.4s ease;
+        pointer-events: none;
+        z-index: 10;
+        cursor: pointer;
+      }
+
+      .hoverCircle.show {
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: auto;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+// // 📱 Tablet and Mobile Responsive Styles
+// @media (max-width: 1024px) {
+//   .video {
+//     .videoText {
+//       h1 {
+//         font-size: 5vw;
+//       }
+
+//       .downArrow {
+//         width: 2rem;
+//         height: 2rem;
+//         margin-right: 2rem;
+//       }
+//     }
+
+//     .video-content {
+//       .play-video {
+//         width: 90vw;
+//         height: 50vw;
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 600px) {
+//   .video {
+//     padding: 1.5rem;
+//     height: 100%;
+
+//     .videoText {
+//       h1 {
+//         font-size: 6vw;
+//       }
+//     }
+
+//     .video-content {
+//       .play-video {
+//         width: 95vw;
+//         height: 55vw;
+//         border-radius: 5vw;
+//       }
+//     }
+//   }
+
+// }

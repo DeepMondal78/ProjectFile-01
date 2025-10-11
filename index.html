@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Deep Mondal - Frontend Developer portfolio website.">
+    <meta name="keywords" content="Frontend, Developer, UI/UX, HTML, CSS, JS, GSAP, Locomotive">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=== locomotive CDN ===-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+
+    <!-- WebGL Fluid Simulation CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/regl/dist/regl.min.js"></script>
+
+    <!--=== CUSTOME CSS LINK ===-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>I'am DeepMondal</title>
+</head>
+
+<body>
+    <!--=== MOUSE CUSTOME CURSORE ===-->
+    <div class="cursor">
+        <div class="cursor__ball cursor__ball--big">
+            <svg height="30" width="30">
+                <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+            </svg>
+        </div>
+
+        <div class="cursor__ball cursor__ball--small">
+            <svg height="10" width="10">
+                <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+            </svg>
+        </div>
+    </div>
+
+
+    <canvas id="fluid"></canvas>
+
+    <!--=== PAGE LOADING ANIMETION ===-->
+    <div class="loader">
+        <img src="https://veronicazubakova.com/wp-content/themes/veronicas-wondrous-site-a74698_1726064536/images/66f05f21d11d188a99e2c288_happy-cat-happy-happy-cat.gif"
+            alt="Cat" class="cat-icon" />
+        <div class="loader-line">
+            <div class="line-fill"></div>
+            <div class="percentage-text">10%</div>
+        </div>
+    </div>
+
+    <div class="loader-overlay"></div>
+
+    <!--=== HEADER NAVBER SECTION ===-->
+    <header class="header">
+        <span id="logo">DEEP</span>
+        <nav class="navber">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Work</a></li>
+            </ul>
+            <button id="connectBtn">Connect🡵</button>
+        </nav>
+    </header>
+
+    <main id="main" data-scroll-container>
+        <!-----===== HERO SECTION =====----->
+        <section class="heroSection">
+            <span class="textHi">
+                <h1>HI</h1><img src="/assets/images/Arrow.webp" alt="">
+            </span>
+            <article class="heroContent">
+                <span class="hero-titel">
+                    <div class="hover-animate">
+                        <h1 id="text" class="ider elementor-heading-title"
+                            data-text="CREATE WEBSITE THAT TRULY INSPIRES">I'M FRONTEND <br>ENGINEER</h1>
+                        <p>I am a creative UI/UX designer<br> with a passion for web<br> application design &
+                            development.
+                        </p>
+                    </div>
+
+                </span>
+                <div class="hero-image">
+                    <img src="/assets/images/portfolio.webp" alt="">
+                </div>
+            </article>
+        </section>
+
+        <!-----===== VIDEO SECTION =====----->
+        <section class="video">
+            <div class="videoText">
+                <h1>CREATIVE</h1>
+                <span class="downArrow">🡳</span>
+                <h1>DEV</h1>
+            </div>
+            <div class="video-content">
+                <div class="play-video">
+                    <div class="hoverCircle">Watch</div>
+                    <video autoplay muted loop>
+                        <source src="./assets/video/original-be3bcac49f3718df49779ea18807807e.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-----===== SKILL SLIDE SECTION =====----->
+        <section class="slideAnimate">
+            <article class="slideRow slideRow1">
+                <div class="slideTrack">
+                    <div class="figma">Figma</div>
+                    <div class="figma">Sketch</div>
+                    <div class="figma">Adobe XD</div>
+                    <div class="figma">Framer</div>
+
+                    <!-- Duplicate for infinite loop -->
+                    <div class="figma">Figma</div>
+                    <div class="figma">Sketch</div>
+                    <div class="figma">Adobe XD</div>
+                    <div class="figma">Framer</div>
+                </div>
+            </article>
+
+            <article class="slideRow slideRow2">
+                <div class="slideTrack">
+                    <div class="figma">React</div>
+                    <div class="figma">Tailwind</div>
+                    <div class="figma">GSAP</div>
+                    <div class="figma">Locomotive</div>
+
+                    <!-- Duplicate for infinite loop -->
+                    <div class="figma">React</div>
+                    <div class="figma">Tailwind</div>
+                    <div class="figma">GSAP</div>
+                    <div class="figma">Locomotive</div>
+                </div>
+            </article>
+        </section>
+
+        <!-----===== CREATE WEBSITE SECTION =====----->
+        <section class="creativeWeb">
+            <div class="creative">
+                <h4 class="wobble" data-animation="spin">I CREATE WEBSITE WITH FULL OF PASSION AND DEDICATION.</h4>
+                <h4 class="wobble" data-animation="spin">STAY AHEAD OF THE CROWD.</h4>
+            </div>
+            <span class="creativeHeading">
+                <div class="hoverImgSection">
+                    <div class="speed-indicator"></div>
+                </div>
+                <div class="headingBg">
+                    <h1 id="creativeText">
+                        CREATE &nbsp; &nbsp; &nbsp;<br>
+                        &nbsp; &nbsp; &nbsp;WEBSITE<br>
+                        THAT TRULY&nbsp; &nbsp; &nbsp;<br>
+                        &nbsp; &nbsp; &nbsp;INSPIRES
+                    </h1>
+                    <div class="overlayText">
+                        CREATE &nbsp; &nbsp; &nbsp;<br>
+                        &nbsp; &nbsp; &nbsp;WEBSITE<br>
+                        THAT TRULY&nbsp; &nbsp; &nbsp;<br>
+                        &nbsp; &nbsp; &nbsp;INSPIRES
+                    </div>
+                </div>
+
+            </span>
+            <div class="creativeContent">
+                <div class="creativeContent-left">
+                    <h4>SERVICES I PROVIDE TO MY CLIENTS</h4>
+                    <button id="getinTuch">Get in tuch</button>
+                </div>
+                <div class="creativeContent-right">
+                    <hr>
+                    <span>
+                        <p>1</p>HIGH QUALITY WEBSITE
+                        <img class="hoverImage" src="/assets/images/HighqualityWeb.webp" alt="arrow">
+                    </span>
+                    <hr>
+                    <span>
+                        <p>2</p>BRAND DESIGN AND UI UX
+                        <img class="hoverImage" src="/assets/images/BrandDesigneanduiux.webp" alt="arrow">
+                    </span>
+                    <hr>
+                    <span>
+                        <p>3</p>3D AND ANIMATIONS
+                        <img class="hoverImage" src="/assets/images/3danimetion.webp" alt="arrow">
+                    </span>
+                    <hr>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-----===== RESENT WORK SECTION =====----->
+        <section class="resentWorkSection">
+            <div class="resentText">
+                <div class="textAnimate">
+                    <h1 class="textAni">RECENT</h1>
+                    <h1 class="textAni">WORK</h1>
+                </div>
+                <span>
+                    <p>*</p>
+                </span>
+            </div>
+            <div class="resentContent">
+                <p>In the creative wilderness, clients find our work truly beloved.</p>
+                <button id="ViewworkBtn">View work</button>
+            </div>
+        </section>
+
+        <!-----===== RESENT WORK CARD SECTION =====----->
+        <section class="wrokCardSection">
+            <div class="firstCard">
+                <div class="card" data-animate="slide-left" id="card1">
+                    <div class="title-wrapper">
+                        <h1 id="title-a">12<span>+</span></h1>
+                        <h2 id="title-aa">12<span>+</span></h2>
+                    </div>
+                    <h4>PROJECTS<br> COMPLETED</h4>
+                </div>
+                <div class="card" data-animate="slide-left" id="card2">
+                    <div class="title-wrapper">
+                        <h1 id="title-b">10<span>+</span></h1>
+                        <h2 id="title-bb">10<span>+</span></h2>
+                    </div>
+                    <h4>SATISFIED<br> CUSTOMER</h4>
+                </div>
+            </div>
+            <div class="secondCard">
+                <div class="card" data-animate="slide-right" id="card3">
+                    <div class="title-wrapper">
+                        <h1 id="title-c">10<span>+</span></h1>
+                        <h2 id="title-cc">10<span>+</span></h2>
+                    </div>
+                    <h4>SATISFIED<br> CUSTOMER</h4>
+                </div>
+                <div class="card" data-animate="slide-right" id="card4">
+                    <div class="title-wrapper">
+                        <h1 id="title-d">12<span>+</span></h1>
+                        <h2 id="title-dd">12<span>+</span></h2>
+                    </div>
+                    <h4>PROJECTS<br> COMPLETED</h4>
+                </div>
+            </div>
+        </section>
+
+
+        <!-----===== PARTNER LOVE SECTION =====----->
+        <section class="partnerLove">
+            <div class="partnerText">
+                <div class="textAnimate">
+                    <h1 class="textAni">PARTNER</h1>
+                    <h1 class="textAni">LOVE</h1>
+                </div>
+
+                <p>Deep is patient, responsive and helpful. I<br> highly recommend and would be happy to<br> use your
+                    services
+                    again, an efficient<br> experience.</p>
+            </div>
+            <article class="reviewCard">
+                <div class="rv-card">
+                    <img src="/assets/images/man-1.webp" alt="" />
+                    <h3>Inter name</h3>
+                    <p>Founder & CEO in loremIspum</p>
+                    <button>Watch now!</button>
+                </div>
+                <div class="rv-card">
+                    <img src="/assets/images/man-1.webp" alt="" />
+                    <h3>Inter name</h3>
+                    <p>Founder & CEO in loremIspum</p>
+                    <button>Watch now!</button>
+                </div>
+                <div class="rv-card">
+                    <img src="/assets/images/man-1.webp" alt="" />
+                    <h3>Inter name</h3>
+                    <p>Founder & CEO in loremIspum</p>
+                    <button>Watch now!</button>
+                </div>
+                <div class="rv-card">
+                    <img src="/assets/images/man-1.webp" alt="" />
+                    <h3>Inter name</h3>
+                    <p>Founder & CEO in loremIspum</p>
+                    <button>Watch now!</button>
+                </div>
+                <div class="rv-card">
+                    <img src="/assets/images/man-1.webp" alt="" />
+                    <h3>Inter name</h3>
+                    <p>Founder & CEO in loremIspum</p>
+                    <button>Watch now!</button>
+                </div>
+                <div class="rv-card">
+                    <img src="/assets/images/man-1.webp" alt="" />
+                    <h3>Inter name</h3>
+                    <p>Founder & CEO in loremIspum</p>
+                    <button>Watch now!</button>
+                </div>
+                <div class="rv-card">
+                    <img src="/assets/images/man-1.webp" alt="" />
+                    <h3>Inter name</h3>
+                    <p>Founder & CEO in loremIspum</p>
+                    <button>Watch now!</button>
+                </div>
+                <div class="rv-card">
+                    <img src="/assets/images/man-1.webp" alt="" />
+                    <h3>Inter name</h3>
+                    <p>Founder & CEO in loremIspum</p>
+                    <button>Watch now!</button>
+                </div>
+                <div class="rv-card">
+                    <img src="/assets/images/man-1.webp" alt="" />
+                    <h3>Inter name</h3>
+                    <p>Founder & CEO in loremIspum</p>
+                    <button>Watch now!</button>
+                </div>
+                <div class="rv-card">
+                    <img src="/assets/images/man-1.webp" alt="" />
+                    <h3>Inter name</h3>
+                    <p>Founder & CEO in loremIspum</p>
+                    <button>Watch now!</button>
+                </div>
+            </article>
+
+        </section>
+
+
+        <!-----===== PIN TEXT ANIMATION SECTION =====----->
+
+
+
+
+        <!-----===== MY DESIGNE ANIMATION SECTION =====----->
+        <section class="myDesigneSection">
+            <div class="designeTextContant">
+                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, ea vitae animi dolorum incidunt
+                    itaque.</h1>
+                <button id="buttonClick">Click Me!</button>
+                <div class="designeImgContent">
+                    <div class="leftSideImg">
+                        <div class="leftImg-1">
+                            <img src="/assets/images/DesigneImg_1.webp" alt="">
+                        </div>
+                        <div class="leftImg-2">
+                            <img src="/assets/images/DesigneImg_3.webp" alt="">
+                        </div>
+                        <div class="leftImg-3">
+                            <img src="/assets/images/DesigneImg_5.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="rightSideImg">
+                        <div class="rightImg-1">
+                            <img src="/assets/images/DesigneImg_2.webp" alt="">
+                        </div>
+                        <div class="rightImg-2">
+                            <img src="/assets/images/DesigneImg_4.webp" alt="">
+                        </div>
+                        <div class="rightImg-3">
+                            <img src="/assets/images/DesigneImg_6.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-----===== FOOTER SECTION =====----->
+        <footer>
+            <article class="footerSection">
+                <span class="star">*</span>
+                <div>
+                    <h1>LET’S <span><img src="/assets/images/footerimg.webp" alt=""></span> CREATE <br> GERAT THINGS.
+                    </h1>
+                    <button class="ctaBtn"><a href="#">Let’s talk my won AI 🡭</a></button>
+                </div>
+
+                <div class="textRotateCircle">
+                    <svg viewBox="0 0 200 200" class="circleTextSVG">
+                        <defs>
+                            <path id="circlePath" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0" />
+                        </defs>
+                        <text>
+                            <textPath xlink:href="#circlePath" startOffset="0%">
+                                LET'S TALK NOW. ~ LET'S TALK NOW. ~ LET'S TALK NOW.
+                            </textPath>
+                        </text>
+                    </svg>
+                    <div class="innerCircle">
+                        <span class="circleLogo">
+                            <img src="/assets/images/Caticon.webp" alt="cat" />
+                        </span>
+                    </div>
+                </div>
+
+            </article>
+
+            <article class="footerLast">
+                <ul>
+                    <li><a href="#">Dribble 🡭</a></li>
+                    <li><a href="#">Linkedin 🡭</a></li>
+                    <li><a href="#">Youtube 🡭</a></li>
+                    <li><a href="#">Behance 🡭</a></li>
+                </ul>
+                <p>Personal portfolio © 2025 - 2026</p>
+            </article>
+        </footer>
+
+
+    </main>
+
+
+
+    <!--=== LOCOMOTIVE CDN ===-->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+    <!--=== GSAP CDN ===-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!--=== GSAP SCROLL-TRIGGER CDN ===-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!--=== CUSTOME LOCOMOTIVE ANIMETION LINK ===-->
+    <script src="./assets/js/locomotive.js"></script>
+
+    <!--=== SPLITE TEXT ANIMETION LINK ===-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+
+    <!--=== CUSTOME JS LINK ===-->
+    <script type="module" src="./assets/js/script.js"></script>
+</body>
+
+</html>
